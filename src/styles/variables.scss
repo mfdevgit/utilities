@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$dark: hsl(200, 20%, 20%);
+$dark_opacity: hsla(200deg, 25%, 25%, 0.5);
+$light: hsl(200deg, 20%, 80%);
+
+@mixin font($color: $dark, $size: 14px, $weight: normal, $align: left, $decoration: none) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    font-family: 'Roboto', sans-serif;
+    line-height: calc($size * 1.5);
+    text-align: $align;
+    text-decoration: $decoration;
+}
+@mixin border($border: none, $outline: none, $radius: 5px) {
+    border: $border;
+    outline: $outline;
+    border-radius: $radius;
+}
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row, $wrap: nowrap, $gap: 0) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+}
+$breakpoints: (
+    'small': 0px,
+    'medium': 520px,
+    'large': 1024px
+);
+@mixin screen($size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}
