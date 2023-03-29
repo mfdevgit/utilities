@@ -61,7 +61,7 @@
         strong {
             @include flex($justify: center, $align: center);
             @include font($color: $light, $align: center);
-            flex: 1 1;
+            width: calc(100% - 50px);
             padding: 10px;
             word-break: break-all;
             border-radius: 5px 0 0 5px;
@@ -69,7 +69,7 @@
         }
         > div {
             @include flex($direction: column);
-            flex: 0 1, 50px;
+            width: 50px;
             button {
                 @include border($radius: 0);
                 @include font($color: $light, $align: center);
