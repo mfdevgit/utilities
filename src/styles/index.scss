@@ -21,18 +21,38 @@
             background-color: $dark;
         }
         main {
+            @include flex($direction: column, $align: center);
             position: relative;
             width: 100%;
             flex: 1 1;
-            padding: 30px;
+            padding: 0 20px 60px 20px;
+        }
+    }
+}
+
+.navigation {
+    display: inline-block;
+    margin-bottom: 30px;
+    a {
+        @include font($color: $light, $align: center);
+        display: inline-block;
+        width: 120px;
+        padding: 10px;
+        background-color: $dark;
+        &:first-child {
+            border-radius: 0 0 0 5px;
+        }
+        &:last-child {
+            border-radius: 0 0 5px 0;
         }
     }
 }
 
 .generator {
     @include border($border: 3px solid $dark);
-    width: 300px;
-    margin: 0 auto;
+    min-width: 280px;
+    width: 100%;
+    max-width: 420px;
     padding: 20px;
     background-color: $dark_opacity;
     .password_navigation {
@@ -116,6 +136,33 @@
             }
             &.active {
                 background-color: $dark;
+            }
+        }
+    }
+}
+
+.gradients {
+    @include flex($justify: center, $wrap: wrap, $gap: 30px);
+    width: 100%;
+    max-width: 1020px;
+    .gradient_cart {
+        @include border($border: 3px solid $dark);
+        width: 320px;
+        .color {
+            height: 135px;
+            cursor: pointer;
+        }
+        .info {
+            @include flex;
+            button {
+                @include border($radius: 0);
+                @include font($color: $light, $size: 12px);
+                display: inline-block;
+                flex: 1 1;
+                padding: 10px;
+                background-color: $dark;
+                text-align: center;
+                cursor: pointer;
             }
         }
     }
