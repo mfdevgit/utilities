@@ -1,46 +1,49 @@
 import React from 'react'
 
+const data = [
+    ['#bdc3c7', '#2c3e50'],
+    ['#0f2027', '#203a43', '#2c5364'],
+    ['#2c3e50', '#fd746c'],
+    ['#3a1c71', '#d76d77', '#ffaf7b'],
+    ['#3e5151', '#decba4'],
+    ['#003973', '#e5e5be'],
+    ['#355c7d', '#6c5b7b', '#c06c84'],
+    ['#1f4037', '#99f2c8'],
+    ['#ea72ad', '#faff89'],
+    ['#544a7d', '#ffd452'],
+    ['#283e51', '#4b79a1'],
+    ['#654ea3', '#eaafc8'],
+    ['#9491e2', '#aff2d8'],
+    ['#ffa585', '#ffeda0'],
+    ['#dd5e89', '#f7bb97'],
+    ['#1d2b64', '#f8cdda'],
+    ['#005aa7', '#fffde4'],
+    ['#c94b4b', '#4b134f'],
+    ['#e1eec3', '#f05053'],
+    ['#7aa1d2', '#dbd4b4', '#cc95c0'],
+    ['#30e8bf', '#ff8235'],
+    ['#44a08d', '#093637'],
+    ['#283048', '#859398'],
+    ['#6190e8', '#a7bfe8'],
+    ['#b190ba', '#e8b595'],
+    ['#616161', '#9bc5c3'],
+    ['#43c6ac', '#191654'],
+    ['#093028', '#237a57'],
+    ['#636fa4', '#e8cbc0'],
+    ['#f3904f', '#3b4371'],
+    ['#2c3e50', '#2980b9'],
+    ['#00416a', '#e4e5e6'],
+    ['#292e49', '#536976'],
+    ['#00467f', '#a5cc82']
+]
+
 export default function Gradients() {
-    const data = [
-        ['#bdc3c7', '#2c3e50'],
-        ['#ffd89b', '#19547b'],
-        ['#3A1C71', '#D76D77', '#FFAF7B'],
-        ['#2C3E50', '#FD746C'],
-        ['#3E5151', '#DECBA4'],
-        ['#aa4b6b', '#6b6b83', '#2C5364'],
-        ['#1f4037', '#99f2c8'],
-        ['#dd3e54', '#6be585'],
-        ['#544a7d', '#ffd452'],
-        ['#4B79A1', '#283E51'],
-        ['#0F2027', '#203A43', '#2C5364'],
-        ['#654ea3', '#eaafc8'],
-        ['#005AA7', '#FFFDE4'],
-        ['#ad5389', '#3c1053'],
-        ['#a8c0ff', '#3f2b96'],
-        ['#355C7D', '#6C5B7B', '#C06C84'],
-        ['#FC5C7D', '#6A82FB'],
-        ['#c94b4b', '#4b134f'],
-        ['#00b09b', '#96c93d'],
-        ['#00F260', '#0575E6'],
-        ['#e1eec3', '#f05053'],
-        ['#283c86', '#45a247'],
-        ['#30E8BF', '#FF8235'],
-        ['#44A08D', '#093637'],
-        ['#6190E8', '#A7BFE8'],
-        ['#43C6AC', '#191654'],
-        ['#093028', '#237A57'],
-        ['#E8CBC0', '#636FA4'],
-        ['#F3904F', '#3B4371'],
-        ['#bdc3c7', '#2c3e50'],
-        ['#A43931', '#1D4350'],
-        ['#2c3e50', '#2980b9']
-    ]
     return (
         <div className='gradients'>
-            {data.map(element => {
+            {data.map((element, index) => {
                 const gradient = `linear-gradient(to right, ${element.join(', ')})`
                 return (
-                    <div className='gradient_cart'>
+                    <div key={index} className='gradient_cart'>
                         <div
                             className='color'
                             style={{ background: gradient }}
@@ -50,15 +53,17 @@ export default function Gradients() {
                             }}
                         ></div>
                         <div className='info'>
-                            {element.map(item => {
+                            {element.map((item, index) => {
                                 return (
                                     <button
+                                        key={index}
                                         onClick={e => {
                                             e.preventDefault()
                                             navigator.clipboard.writeText(item)
                                         }}
                                     >
-                                        {item}
+                                        <span style={{ backgroundColor: item }}></span>
+                                        {item.slice(1)}
                                     </button>
                                 )
                             })}

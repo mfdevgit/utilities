@@ -143,26 +143,48 @@
 
 .gradients {
     @include flex($justify: center, $wrap: wrap, $gap: 30px);
-    width: 100%;
     max-width: 1020px;
     .gradient_cart {
         @include border($border: 3px solid $dark);
         width: 320px;
         .color {
+            position: relative;
             height: 135px;
             cursor: pointer;
+            &::before {
+                content: '';
+                position: absolute;
+                top: calc(50% - 20px);
+                left: calc(50% - 20px);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: $dark_opacity url('../../public/images/copy.svg') center / 20px no-repeat;
+                transition: all 150ms ease;
+                opacity: 0;
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
         }
         .info {
             @include flex;
             button {
+                @include flex($justify: center, $align: center, $gap: 10px);
                 @include border($radius: 0);
                 @include font($color: $light, $size: 12px);
-                display: inline-block;
                 flex: 1 1;
                 padding: 10px;
                 background-color: $dark;
                 text-align: center;
                 cursor: pointer;
+                span {
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                }
             }
         }
     }
