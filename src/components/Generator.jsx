@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 
 export default function Generator() {
     const [password, setPassword] = useState('')
@@ -35,6 +36,9 @@ export default function Generator() {
 
     return (
         <>
+            <Helmet>
+                <title>Генератор паролей | Утилиты</title>
+            </Helmet>
             <div className='generator'>
                 <div className='password_navigation'>
                     <strong>{password}</strong>

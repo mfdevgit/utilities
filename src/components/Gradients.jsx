@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 const data = [
     ['#bdc3c7', '#2c3e50'],
@@ -39,38 +40,43 @@ const data = [
 
 export default function Gradients() {
     return (
-        <div className='gradients'>
-            {data.map((element, index) => {
-                const gradient = `linear-gradient(to right, ${element.join(', ')})`
-                return (
-                    <div key={index} className='gradient_cart'>
-                        <div
-                            className='color'
-                            style={{ background: gradient }}
-                            onClick={e => {
-                                e.preventDefault()
-                                navigator.clipboard.writeText(gradient)
-                            }}
-                        ></div>
-                        <div className='info'>
-                            {element.map((item, index) => {
-                                return (
-                                    <button
-                                        key={index}
-                                        onClick={e => {
-                                            e.preventDefault()
-                                            navigator.clipboard.writeText(item)
-                                        }}
-                                    >
-                                        <span style={{ backgroundColor: item }}></span>
-                                        {item.slice(1)}
-                                    </button>
-                                )
-                            })}
+        <>
+            <Helmet>
+                <title>Градиенты | Утилиты</title>
+            </Helmet>
+            <div className='gradients'>
+                {data.map((element, index) => {
+                    const gradient = `linear-gradient(to right, ${element.join(', ')})`
+                    return (
+                        <div key={index} className='gradient_cart'>
+                            <div
+                                className='color'
+                                style={{ background: gradient }}
+                                onClick={e => {
+                                    e.preventDefault()
+                                    navigator.clipboard.writeText(gradient)
+                                }}
+                            ></div>
+                            <div className='info'>
+                                {element.map((item, index) => {
+                                    return (
+                                        <button
+                                            key={index}
+                                            onClick={e => {
+                                                e.preventDefault()
+                                                navigator.clipboard.writeText(item)
+                                            }}
+                                        >
+                                            <span style={{ backgroundColor: item }}></span>
+                                            {item.slice(1)}
+                                        </button>
+                                    )
+                                })}
+                            </div>
                         </div>
-                    </div>
-                )
-            })}
-        </div>
+                    )
+                })}
+            </div>
+        </>
     )
 }
