@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
-import Loader from './Loader'
+import React, { useEffect, useState } from "react"
+import { Helmet } from "react-helmet"
+import Loader from "./Loader"
 
 export default function Generator() {
     const [isLoading, setIsLoading] = useState(true)
     const [isValid, setIsValid] = useState(true)
-    const [password, setPassword] = useState('')
+    const [password, setPassword] = useState("")
     const [letters, setLetters] = useState(true)
     const [digits, setDigits] = useState(true)
     const [symbols, setSymbols] = useState(false)
     const [passwordLength, setPasswordLength] = useState(18)
     const passwordChars = {
-        letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
-        digits: '0123456789',
+        letters: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+        digits: "0123456789",
         symbols: '!@#$%^&*()_-+={}[]|:;"<>,.?/'
     }
 
     const generatePassword = () => {
-        let result = ''
-        let available = ''
+        let result = ""
+        let available = ""
         if (letters) available += passwordChars.letters
         if (digits) available += passwordChars.digits
         if (symbols) available += passwordChars.symbols
         if (available.length === 0 || passwordLength <= 0) {
-            setPassword('')
+            setPassword("")
             setIsValid(false)
         } else {
             setIsValid(true)
@@ -39,7 +39,7 @@ export default function Generator() {
         const timer = setTimeout(() => {
             generatePassword()
             setIsLoading(false)
-        }, 1000)
+        }, 800)
         return () => clearTimeout(timer)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -58,6 +58,20 @@ export default function Generator() {
             setPasswordLength(prev => prev - 1)
         }
     }
+    const handleRefreshPassword = e => {
+        e.target.classList.add("active")
+        generatePassword()
+        setTimeout(() => {
+            e.target.classList.remove("active")
+        }, 300)
+    }
+    const handleCopyPassword = e => {
+        e.target.classList.add("active")
+        navigator.clipboard.writeText(password)
+        setTimeout(() => {
+            e.target.classList.remove("active")
+        }, 300)
+    }
 
     return (
         <>
@@ -71,18 +85,8 @@ export default function Generator() {
                     <div className='password_navigation'>
                         <strong>{password}</strong>
                         <div>
-                            <button
-                                onClick={e => {
-                                    e.preventDefault()
-                                    generatePassword()
-                                }}
-                            />
-                            <button
-                                onClick={e => {
-                                    e.preventDefault()
-                                    navigator.clipboard.writeText(password)
-                                }}
-                            />
+                            <button onClick={handleRefreshPassword} />
+                            <button onClick={handleCopyPassword} />
                         </div>
                     </div>
                     {isValid ? null : <p>Для генерации пароля необходимо выбрать хотя бы одну группу символов и установить длину больше нуля.</p>}
@@ -92,13 +96,13 @@ export default function Generator() {
                         <button onClick={handleDecrementLength}>-</button>
                     </div>
                     <div className='password_chars'>
-                        <button className={letters ? 'active' : ''} onClick={() => setLetters(!letters)}>
+                        <button className={letters ? "active" : ""} onClick={() => setLetters(!letters)}>
                             Буквы
                         </button>
-                        <button className={digits ? 'active' : ''} onClick={() => setDigits(!digits)}>
+                        <button className={digits ? "active" : ""} onClick={() => setDigits(!digits)}>
                             Цифры
                         </button>
-                        <button className={symbols ? 'active' : ''} onClick={() => setSymbols(!symbols)}>
+                        <button className={symbols ? "active" : ""} onClick={() => setSymbols(!symbols)}>
                             Символы
                         </button>
                     </div>
