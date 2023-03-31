@@ -83,11 +83,11 @@
                 cursor: pointer;
                 &:first-of-type {
                     border-top-right-radius: 5px;
-                    background: $dark url('../../public/images/refresh.svg') center / 20px no-repeat;
+                    background: $dark url('../images/refresh.svg') center / 20px no-repeat;
                 }
                 &:last-of-type {
                     border-bottom-right-radius: 5px;
-                    background: $dark url('../../public/images/copy.svg') center / 20px no-repeat;
+                    background: $dark url('../images/copy.svg') center / 20px no-repeat;
                 }
             }
         }
@@ -167,7 +167,7 @@
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                background: $dark_opacity url('../../public/images/copy.svg') center / 20px no-repeat;
+                background: $dark_opacity url('../images/copy.svg') center / 20px no-repeat;
                 transition: all 150ms ease;
                 opacity: 0;
             }
@@ -218,7 +218,7 @@
                         width: 18px;
                         height: 18px;
                         border-radius: 50%;
-                        background: $dark url('../../public/images/check.svg') center / 100% no-repeat;
+                        background: $dark url('../images/check.svg') center / 100% no-repeat;
                         transition: all 150ms ease;
                         opacity: 0;
                     }

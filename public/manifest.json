@@ -3,22 +3,22 @@
     "name": "Полезные утилиты для программирования, разработки и иного использования от mfdev, Максима Франко.",
     "icons": [
         {
-            "src": "logotypes/favicon.ico",
+            "src": "favicon.ico",
             "sizes": "64x64 32x32 24x24 16x16",
             "type": "image/x-icon"
         },
         {
-            "src": "logotypes/logotype_64.png",
+            "src": "logotype_64.png",
             "type": "image/png",
             "sizes": "64x64"
         },
         {
-            "src": "logotypes/logotype_192.png",
+            "src": "logotype_192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "logotypes/logotype_512.png",
+            "src": "logotype_512.png",
             "type": "image/png",
             "sizes": "512x512"
         }
