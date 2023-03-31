@@ -17,7 +17,7 @@
         header,
         footer {
             width: 100%;
-            flex: 0 1, 50px;
+            flex: 0 1 50px;
             background-color: $dark;
         }
         main {
@@ -64,7 +64,7 @@
         strong {
             @include flex($justify: center, $align: center);
             @include font($color: $light, $align: center);
-            flex: 1 0, auto;
+            flex: 1 0 auto;
             padding: 10px;
             word-break: break-all;
             border-radius: 5px 0 0 5px;
@@ -72,7 +72,7 @@
         }
         > div {
             @include flex($direction: column);
-            flex: 0 0, 50px;
+            flex: 0 0 50px;
             button {
                 @include border($radius: 0);
                 @include font($color: $light, $align: center);
@@ -154,7 +154,7 @@
     margin: 0 auto;
     .gradient_cart {
         @include border($border: 3px solid $dark);
-        flex: 1 0, 280px;
+        flex: 1 0 280px;
         .color {
             position: relative;
             height: 135px;
