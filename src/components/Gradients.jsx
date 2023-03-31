@@ -1,5 +1,7 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
+import Loader from './Loader'
 
 const data = [
     ['#bdc3c7', '#2c3e50'],
@@ -39,44 +41,69 @@ const data = [
 ]
 
 export default function Gradients() {
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false)
+        }, 1000)
+        return () => clearTimeout(timer)
+    }, [])
     return (
         <>
             <Helmet>
                 <title>Градиенты | Утилиты</title>
             </Helmet>
-            <div className='gradients'>
-                {data.map((element, index) => {
-                    const gradient = `linear-gradient(to right, ${element.join(', ')})`
-                    return (
-                        <div key={index} className='gradient_cart'>
-                            <div
-                                className='color'
-                                style={{ background: gradient }}
-                                onClick={e => {
-                                    e.preventDefault()
-                                    navigator.clipboard.writeText(gradient)
-                                }}
-                            ></div>
-                            <div className='info'>
-                                {element.map((item, index) => {
-                                    return (
-                                        <button
-                                            key={index}
-                                            onClick={e => {
-                                                e.preventDefault()
-                                                navigator.clipboard.writeText(item)
-                                            }}
-                                        >
-                                            <span style={{ backgroundColor: item }}></span>
-                                            {item.slice(1)}
-                                        </button>
-                                    )
-                                })}
+            {isLoading ? (
+                <Loader />
+            ) : (
+                <div className='gradients'>
+                    {data.map((element, index) => {
+                        const gradient = `linear-gradient(to right, ${element.join(', ')})`
+                        return (
+                            <div key={index} className='gradient_cart'>
+                                <div
+                                    className='color'
+                                    style={{ background: gradient }}
+                                    onClick={e => {
+                                        e.preventDefault()
+                                        navigator.clipboard.writeText(gradient)
+                                        e.target.classList.add('active')
+                                        setTimeout(() => {
+                                            e.target.classList.remove('active')
+                                        }, 600)
+                                    }}
+                                ></div>
+                                <div className='info'>
+                                    {element.map((item, index) => {
+                                        return (
+                                            <button
+                                                key={index}
+                                                onClick={e => {
+                                                    e.preventDefault()
+                                                    navigator.clipboard.writeText(item)
+                                                    e.target.classList.add('active')
+                                                    setTimeout(() => {
+                                                        e.target.classList.remove('active')
+                                                    }, 600)
+                                                }}
+                                            >
+                                                <span
+                                                    style={{ backgroundColor: item }}
+                                                    onClick={e => {
+                                                        e.stopPropagation()
+                                                        e.currentTarget.parentNode.click()
+                                                    }}
+                                                ></span>
+                                                {item.slice(1)}
+                                            </button>
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
-            </div>
+                        )
+                    })}
+                </div>
+            )}
         </>
     )
 }

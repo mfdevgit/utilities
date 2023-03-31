@@ -3,6 +3,7 @@
 $dark: hsl(200, 20%, 20%);
 $dark_opacity: hsla(200deg, 25%, 25%, 0.5);
 $light: hsl(200deg, 20%, 80%);
+$red: hsl(0, 50%, 50%);
 
 @mixin font($color: $dark, $size: 14px, $weight: normal, $align: left, $decoration: none) {
     color: $color;
@@ -25,14 +26,4 @@ $light: hsl(200deg, 20%, 80%);
     flex-direction: $direction;
     flex-wrap: $wrap;
     gap: $gap;
-}
-$breakpoints: (
-    'small': 0px,
-    'medium': 520px,
-    'large': 1024px
-);
-@mixin screen($size) {
-    @media (min-width: map-get($breakpoints, $size)) {
-        @content;
-    }
 }

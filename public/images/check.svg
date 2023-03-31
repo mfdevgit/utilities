@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <path fill='none' stroke='hsl(200deg, 20%, 80%)' stroke-width='4px' stroke-miterlimit='133.33' d="m47.5,24.92c0,12.43-10.07,22.5-22.5,22.5S2.5,37.35,2.5,24.92,12.57,2.42,25,2.42s22.5,10.07,22.5,22.5Z"/>
+  <path fill='none' stroke='hsl(200deg, 20%, 80%)' stroke-width='4px' stroke-linecap='round' stroke-linejoin='round' d="m17.5,25.15l4.21,4.21h0c.44.44,1.15.44,1.59,0h0l9.21-9.21"/>
+</svg>
