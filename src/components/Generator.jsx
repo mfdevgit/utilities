@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Helmet } from "react-helmet"
 import Loader from "./Loader"
 
@@ -39,7 +39,7 @@ export default function Generator() {
         const timer = setTimeout(() => {
             generatePassword()
             setIsLoading(false)
-        }, 800)
+        }, 500)
         return () => clearTimeout(timer)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
