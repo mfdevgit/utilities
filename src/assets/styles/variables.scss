@@ -3,7 +3,9 @@
 $dark: hsl(200, 20%, 20%);
 $dark_opacity: hsla(200deg, 25%, 25%, 0.5);
 $light: hsl(200deg, 20%, 80%);
-$red: hsl(0, 50%, 50%);
+$light_darker: hsl(200deg, 20%, 50%);
+$red: hsl(0deg, 50%, 40%);
+$green: hsl(145deg, 50%, 35%);
 
 @mixin font($color: $dark, $size: 14px, $weight: normal, $align: left, $decoration: none) {
     color: $color;

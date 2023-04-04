@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import About from './components/About'
 import Generator from './components/Generator'
 import Gradients from './components/Gradients'
+import Todo from './components/Todo'
 
 export default function App() {
     return (
@@ -15,6 +16,7 @@ export default function App() {
                 <Routes>
                     <Route path='/' element={<About />} />
                     <Route path='/generator' element={<Generator />} />
+                    <Route path='/todo' element={<Todo />} />
                     <Route path='/gradients' element={<Gradients />} />
                 </Routes>
             </main>

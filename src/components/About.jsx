@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import Loader from "./Loader"
+import React, { useState, useEffect } from 'react'
+import Loader from './Loader'
 
 export default function About() {
     const [isLoading, setIsLoading] = useState(true)

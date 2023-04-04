@@ -5,6 +5,7 @@ export default function Navigation() {
     return (
         <nav className='navigation'>
             <Link to='/generator'>Генератор</Link>
+            <Link to='/todo'>Список</Link>
             <Link to='/gradients'>Градиенты</Link>
         </nav>
     )
