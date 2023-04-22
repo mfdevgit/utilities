@@ -1,0 +1,58 @@
+@import '/src/styles/variables.scss';
+
+.todo {
+    @include border($border: 3px solid $dark);
+    min-width: 280px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: $dark_opacity;
+    > div {
+        @include flex($justify: space-between, $align: stretch);
+        & + div {
+            margin-top: 15px;
+        }
+        input,
+        span {
+            @include border($radius: 5px 0 0 5px);
+            @include font($color: $light);
+            width: calc(100% - 40px);
+            padding: 15px;
+            background-color: $dark_opacity;
+        }
+        svg {
+            @include border($radius: 0 5px 5px 0);
+            @include font($color: $light);
+            width: 55px;
+            padding: 20px;
+            background-color: $dark;
+            transition: all 150ms ease;
+            cursor: pointer;
+            &.delete {
+                path {
+                    fill: $red;
+                    transition: all 150ms ease;
+                }
+                &:hover {
+                    background-color: $red;
+                    path {
+                        fill: $light;
+                    }
+                }
+            }
+            &.send {
+                path {
+                    fill: $green;
+                    transition: all 150ms ease;
+                }
+                &:hover {
+                    background-color: $green;
+                    path {
+                        fill: $light;
+                    }
+                }
+            }
+        }
+    }
+}

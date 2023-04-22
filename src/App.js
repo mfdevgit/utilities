@@ -1,11 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Navigation from './components/Navigation'
+import Navigation from './modules/navigation/Navigation'
+import GeneratorModule from './modules/generator/GeneratorModule'
+import TodoModule from './modules/todo/TodoModule'
+import GradientsModule from './modules/gradients/GradientsModule'
 import Footer from './components/Footer'
-import About from './components/About'
-import Generator from './components/Generator'
-import Gradients from './components/Gradients'
-import Todo from './components/Todo'
 
 export default function App() {
     return (
@@ -14,10 +13,9 @@ export default function App() {
             <main>
                 <Navigation />
                 <Routes>
-                    <Route path='/' element={<About />} />
-                    <Route path='/generator' element={<Generator />} />
-                    <Route path='/todo' element={<Todo />} />
-                    <Route path='/gradients' element={<Gradients />} />
+                    <Route path='/generator' element={<GeneratorModule />} />
+                    <Route path='/todo' element={<TodoModule />} />
+                    <Route path='/gradients' element={<GradientsModule />} />
                 </Routes>
             </main>
             <Footer />

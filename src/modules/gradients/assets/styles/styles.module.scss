@@ -1,0 +1,81 @@
+@import '/src/styles/variables.scss';
+
+.gradients {
+    @include flex($justify: center, $wrap: wrap, $gap: 30px);
+    max-width: 1140px;
+    margin: 0 auto;
+    .cart {
+        @include border($border: 3px solid $dark);
+        flex: 1 0 280px;
+        .gradient {
+            position: relative;
+            height: 135px;
+            cursor: pointer;
+            &::before {
+                content: '';
+                position: absolute;
+                top: calc(50% - 20px);
+                left: calc(50% - 20px);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: $dark_opacity url('../images/copy.svg') center / 20px no-repeat;
+                transition: all 150ms ease;
+                opacity: 0;
+            }
+            &:hover {
+                &:not(.active) {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+            &.active {
+                &::before {
+                    opacity: 1;
+                    transform: scale(1.25) rotate(180deg);
+                }
+            }
+        }
+        .colors {
+            @include flex;
+            background-color: $dark;
+            button {
+                @include flex($justify: center, $align: center, $gap: 10px);
+                @include border($radius: 0);
+                @include font($color: $light, $size: 12px);
+                flex: 1 0;
+                padding: 10px 5px;
+                background-color: transparent;
+                cursor: pointer;
+                &.active {
+                    span {
+                        &::before {
+                            opacity: 1;
+                            transform: scale(1.25);
+                        }
+                    }
+                }
+                span {
+                    position: relative;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    transition: all 150ms ease;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: calc(50% - 9px);
+                        left: calc(50% - 9px);
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 50%;
+                        background: $dark url('../images/check.svg') center / 100% no-repeat;
+                        transition: all 150ms ease;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}

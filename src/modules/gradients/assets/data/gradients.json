@@ -1,0 +1,138 @@
+[
+    {
+        "colors": ["#bdc3c7", "#2c3e50"],
+        "copies": 47
+    },
+    {
+        "colors": ["#0f2027", "#203a43", "#2c5364"],
+        "copies": 35
+    },
+    {
+        "colors": ["#2c3e50", "#fd746c"],
+        "copies": 42
+    },
+    {
+        "colors": ["#3a1c71", "#d76d77", "#ffaf7b"],
+        "copies": 30
+    },
+    {
+        "colors": ["#3e5151", "#decba4"],
+        "copies": 43
+    },
+    {
+        "colors": ["#003973", "#e5e5be"],
+        "copies": 30
+    },
+    {
+        "colors": ["#355c7d", "#6c5b7b", "#c06c84"],
+        "copies": 35
+    },
+    {
+        "colors": ["#1f4037", "#99f2c8"],
+        "copies": 32
+    },
+    {
+        "colors": ["#ea72ad", "#faff89"],
+        "copies": 27
+    },
+    {
+        "colors": ["#544a7d", "#ffd452"],
+        "copies": 37
+    },
+    {
+        "colors": ["#283e51", "#4b79a1"],
+        "copies": 26
+    },
+    {
+        "colors": ["#654ea3", "#eaafc8"],
+        "copies": 18
+    },
+    {
+        "colors": ["#9491e2", "#aff2d8"],
+        "copies": 16
+    },
+    {
+        "colors": ["#ffa585", "#ffeda0"],
+        "copies": 32
+    },
+    {
+        "colors": ["#dd5e89", "#f7bb97"],
+        "copies": 18
+    },
+    {
+        "colors": ["#1d2b64", "#f8cdda"],
+        "copies": 15
+    },
+    {
+        "colors": ["#005aa7", "#fffde4"],
+        "copies": 20
+    },
+    {
+        "colors": ["#c94b4b", "#4b134f"],
+        "copies": 15
+    },
+    {
+        "colors": ["#e1eec3", "#f05053"],
+        "copies": 22
+    },
+    {
+        "colors": ["#7aa1d2", "#dbd4b4", "#cc95c0"],
+        "copies": 23
+    },
+    {
+        "colors": ["#30e8bf", "#ff8235"],
+        "copies": 15
+    },
+    {
+        "colors": ["#44a08d", "#093637"],
+        "copies": 15
+    },
+    {
+        "colors": ["#283048", "#859398"],
+        "copies": 26
+    },
+    {
+        "colors": ["#6190e8", "#a7bfe8"],
+        "copies": 15
+    },
+    {
+        "colors": ["#b190ba", "#e8b595"],
+        "copies": 20
+    },
+    {
+        "colors": ["#616161", "#9bc5c3"],
+        "copies": 27
+    },
+    {
+        "colors": ["#43c6ac", "#191654"],
+        "copies": 17
+    },
+    {
+        "colors": ["#093028", "#237a57"],
+        "copies": 17
+    },
+    {
+        "colors": ["#636fa4", "#e8cbc0"],
+        "copies": 21
+    },
+    {
+        "colors": ["#f3904f", "#3b4371"],
+        "copies": 15
+    },
+    {
+        "colors": ["#2c3e50", "#2980b9"],
+        "copies": 17
+    },
+    {
+        "colors": ["#00416a", "#e4e5e6"],
+        "copies": 25
+    },
+    {
+        "colors": ["#292e49", "#536976"],
+        "copies": 22
+    },
+    {
+        "colors": ["#00467f", "#a5cc82"],
+        "copies": 19
+    }
+]
