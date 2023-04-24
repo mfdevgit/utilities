@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import data from './assets/data/gradients.json'
-import styles from './assets/styles/styles.module.scss'
 import { Helmet } from 'react-helmet'
 import Loader from '../../components/Loader'
+import data from './assets/data/gradients.json'
+import styles from './assets/styles/styles.module.scss'
 
 const handleGradientClick = (e, gradient) => {
     navigator.clipboard.writeText(gradient)

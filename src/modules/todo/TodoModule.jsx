@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import styles from './assets/styles.module.scss'
 import { Helmet } from 'react-helmet'
 import Loader from '../../components/Loader'
+import styles from './assets/styles/styles.module.scss'
 
 export default function TodoModule() {
     const [isLoading, setIsLoading] = useState(true)
