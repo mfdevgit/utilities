@@ -1,17 +1,20 @@
 import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Navigation from './modules/navigation/Navigation'
+import { Header } from './modules/header/index'
 import GeneratorModule from './modules/generator/GeneratorModule'
 import TodoModule from './modules/todo/TodoModule'
 import GradientsModule from './modules/gradients/GradientsModule'
 import Footer from './components/Footer'
+import useCheckDeviceType from './hooks/checkDeviceType'
+import { Sidebar } from './modules/sidebar/index'
 
 export default function App() {
+    const deviceType = useCheckDeviceType()
+
     return (
         <div className='app'>
             <Header />
             <main>
-                <Navigation />
+                <Sidebar />
                 <Routes>
                     <Route path='/generator' element={<GeneratorModule />} />
                     <Route path='/todo' element={<TodoModule />} />

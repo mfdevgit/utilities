@@ -1,0 +1,9 @@
+@import '/src/styles/variables.scss';
+
+.header {
+    position: relative;
+    width: 100%;
+    flex: 0 0 60px;
+    padding: 10px 20px;
+    background-color: $dark;
+}

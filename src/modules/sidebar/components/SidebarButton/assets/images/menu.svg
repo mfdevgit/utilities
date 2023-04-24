@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <rect fill='hsl(200deg, 20%, 80%)' x="2.5" y="5" width="45" height="10" rx="5" ry="5"/>
+  <rect fill='hsl(200deg, 20%, 80%)' x="2.5" y="20" width="45" height="10" rx="5" ry="5"/>
+  <rect fill='hsl(200deg, 20%, 80%)' x="2.5" y="35" width="45" height="10" rx="5" ry="5"/>
+</svg>

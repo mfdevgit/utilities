@@ -1,14 +1,12 @@
 @import '/src/styles/variables.scss';
 
 .navigation {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: calc(50% - 180px);
+    display: block;
+    width: 100%;
     a {
         @include font($color: $light, $align: center);
-        display: inline-block;
-        width: 120px;
+        display: block;
+        width: 100%;
         padding: 10px;
         background-color: $dark;
         &:first-child {
