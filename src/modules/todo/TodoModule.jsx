@@ -6,7 +6,7 @@ import styles from './assets/styles/styles.module.scss'
 export default function TodoModule() {
     const [isLoading, setIsLoading] = useState(true)
     const [newTask, setNewTask] = useState('')
-    const [allTasks, setAllTasks] = useState(['Добавить задачу'])
+    const [allTasks, setAllTasks] = useState(['добавить задачу'])
 
     const handleAddTask = () => {
         if (newTask === '') {

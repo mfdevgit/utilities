@@ -19,9 +19,10 @@
         cursor: pointer;
         path {
             fill: $light;
-            transition: all 150ms ease;
+            transition: all 300ms ease;
         }
-        &:hover {
+        &:hover,
+        &.open {
             path {
                 fill: hsl(264, 30%, 50%);
             }
